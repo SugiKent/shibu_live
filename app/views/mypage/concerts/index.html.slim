@@ -1,0 +1,7 @@
+div
+  = link_to "ライブを登録！", new_mypage_concert_path
+
+  - @concerts.each do |concert|
+    p
+      = concert.title
+  = link_to 'ログアウト', logout_path

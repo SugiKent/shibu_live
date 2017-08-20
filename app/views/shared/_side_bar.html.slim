@@ -1,0 +1,49 @@
+.N-Main-Contents
+  - flash.each do |type, value|
+    = content_tag(:div, value, class: "alert alert-#{type}")
+  - if @sidebar_show
+  
+    .N-Main-Head
+      .N-arrow
+      = link_to "BACK", concerts_path
+    .N-Main-Balloon
+      p
+        = @concert.comment
+    .N-Main-Artist
+      = image_tag current_user.image_url, class: "N-Main-img"
+      .N-Main-ArtistInformation
+        span
+          | Musician
+        span
+          = current_user.nickname
+      p
+        = @concert.start_at.to_s(:only_localtime).html_safe
+        | 〜
+        = @concert.end_at.to_s(:only_localtime).html_safe
+  - else
+    - if @now_playing.present?
+      h2.N-Main-Title
+        | NowPlaying
+      .N-Main-Items
+        - @now_playing.each do |concert|
+          - user = concert.user
+          .N-Main-Item
+            = link_to concert_path(concert)
+              = image_tag user.image_url, class: "N-Main-Item-Image"
+              p.N-Main-Item-Description
+                | Musician
+                br
+                = user.nickname
+    - if @today_concert.present?
+      h2.N-Main-Title
+        | 今日の講演予定
+      .N-Main-Items
+        - @today_concert.each do |concert|
+          - user = concert.user
+          .N-Main-Item
+            = link_to concert_path(concert)
+              = image_tag user.image_url, class: "N-Main-Item-Image"
+              p.N-Main-Item-Description
+                | Musician
+                br
+                = user.nickname

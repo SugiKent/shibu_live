@@ -1,0 +1,50 @@
+.sample{
+  height: 125px;
+  width: 250px;
+}
+
+.d-InfoWindow-User{
+  background-color: #2C2C2C;
+  width: 250px;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.d-InfoWindow-User-Inner{
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-InfoWindow-Img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.d-InfoWindow-img img{
+  border-radius: 50%;
+}
+
+.d-InfoWindow-contents{
+  margin-left: 30px;
+}
+
+.d-InfoWindow-Name{
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.d-InfoWindow-category{
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.d-Notice-Style{
+  font-size: 10px;
+}
