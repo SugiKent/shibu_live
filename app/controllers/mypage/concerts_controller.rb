@@ -1,10 +1,12 @@
 class Mypage::ConcertsController < MypageController
   def index
     @concerts = current_user.concerts.all
+    @sidebar_mypage = true
   end
 
   def new
     @concert = Concert.new()
+    @sidebar_mypage = true
   end
 
   def create

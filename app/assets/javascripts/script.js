@@ -9,7 +9,6 @@ concert_data.forEach(function(val,index,ar){
   var data = [];
   data.unshift(val['concert']);
   data.unshift(val['user']);
-  console.log(data);
   markerData.unshift(data);
 });
 
@@ -36,13 +35,14 @@ function initMap() {
     });
 
      markerEvent(i); // マーカーにクリックイベントを追加
+     marker[i].setOptions({// TAM 東京のマーカーのオプション設定
+          icon: {
+           url: 'http://www2.rikkyo.ac.jp/web/14bn016z/trunk_shibuya_live/pin.png'// マーカーの画像を変更
+         }
+     });
+
  }
 
-   marker[0].setOptions({// TAM 東京のマーカーのオプション設定
-        icon: {
-         url: markerData[0]['icon']// マーカーの画像を変更
-       }
-   });
 }
 
 // マーカーにクリックイベントを追加

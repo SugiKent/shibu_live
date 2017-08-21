@@ -2,15 +2,11 @@ doctype html
 html
   head
     title
-      | ShibuyaLive
+      | シブライブ
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
 
   body
-    - if logged_in?
-      = link_to 'ログアウト', logout_path
-    - else
-      = link_to 'Twitterでログイン', 'auth/twitter'
-
+    = render 'shared/master_header'
     = yield

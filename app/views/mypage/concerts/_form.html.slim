@@ -1,16 +1,17 @@
-div
-  = f.text_field :title, placeholder: 'ライブのタイトルを入力してください。'
-div
-  = f.text_field :address, placeholder: '出没場所を入力してください。'
-div
-  = f.datetime_select :start_at
-div
-  = f.datetime_select :end_at
-div
-  = f.collection_check_boxes :category_ids, Category.all, :id, :name
-div
-  = f.text_area :comment
-div
-  = f.hidden_field :user_id, value: current_user.id
-div
-  = f.submit '登録'
+.d-form-wrapper
+  div
+    = f.text_field :title, placeholder: 'ライブのタイトルを入力してください。', class: 'textfield'
+  div
+    = f.text_field :address, placeholder: '出没場所を入力してください。'
+  .aaaaaaa
+    = f.datetime_select :start_at
+  div
+    = f.datetime_select :end_at
+  div
+    = f.collection_check_boxes :category_ids, Category.all, :id, :name
+  div
+    = f.text_area :comment
+  div
+    = f.hidden_field :user_id, value: current_user.id
+  div
+    = f.submit '登録'

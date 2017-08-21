@@ -19,7 +19,7 @@ class ConcertsController < ApplicationController
   def show
     @concert = Concert.find(params[:id])
     concerts_data = []
-    current_user.concerts.each do |concert|
+    @concert.user.concerts.each do |concert|
       data = { "concert" => concert, "user" => User.find(concert.user_id) }
       concerts_data << data
     end

@@ -2,13 +2,14 @@ doctype html
 html
   head
     title
-      | ShibuyaLive
+      | シブライブ
     = csrf_meta_tags
     = include_gon
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
 
   body
+    = render 'shared/master_header'
     = render 'shared/header'
     
     .N-Main

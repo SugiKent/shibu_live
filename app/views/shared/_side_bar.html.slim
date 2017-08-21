@@ -10,6 +10,21 @@
       p
         = @concert.comment
     .N-Main-Artist
+      = image_tag @concert.user.image_url, class: "N-Main-img"
+      .N-Main-ArtistInformation
+        span
+          | Musician
+        span
+          = @concert.user.nickname
+      p
+        = @concert.start_at.to_s(:only_localtime).html_safe
+        | 〜
+        = @concert.end_at.to_s(:only_localtime).html_safe
+  - elsif @sidebar_mypage
+    .N-Main-Head
+      .N-arrow
+      = link_to "BACK", concerts_path
+    .N-Main-Artist
       = image_tag current_user.image_url, class: "N-Main-img"
       .N-Main-ArtistInformation
         span
@@ -17,9 +32,13 @@
         span
           = current_user.nickname
       p
-        = @concert.start_at.to_s(:only_localtime).html_safe
-        | 〜
-        = @concert.end_at.to_s(:only_localtime).html_safe
+        | 今までのライブ登録数&nbsp;
+        = current_user.concerts.count
+    .N-Main-Head
+      .N-arrow--right
+      = link_to "ライブ登録", new_mypage_concert_path
+    .N-Main-Head
+      = link_to 'ログアウト', logout_path
   - else
     - if @now_playing.present?
       h2.N-Main-Title

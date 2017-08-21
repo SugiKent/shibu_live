@@ -1,27 +1,24 @@
-header.N-Global-Header
-  .N-Global-HeaderItems
-    = link_to root_path do
-      h1.N-Global-HeaderTitle
-        | Service
-  .N-Global-Menu
-    ul.N-Global-MenuItems
+.N-Global-Menu
+  ul.N-Global-MenuItems
+    li
+      a
+        | About
+    li
+      = link_to "ALL", concerts_path, class: "#{'Current' if params[:cat].nil?}"
+    - @categories.each do |cat|
       li
-        a
-          | About
-      - @categories.each do |cat|
-        li
-          = link_to cat.name, concerts_path(cat: cat.name), class: "#{'Current' if cat.name == params[:cat] }"
-    - if logged_in?
-      .N-Global-MenuItems-Mypage
-        = link_to mypage_concerts_path do
-          img src="#{current_user.image_url}"
-          p.N-MenuItems-Description
-            span
-              | Musician
-            br
-            span
-              = current_user.nickname
+        = link_to cat.name, concerts_path(cat: cat.name), class: "#{'Current' if cat.name == params[:cat] }"
+  - if logged_in?
+    .N-Global-MenuItems-Mypage
+      = link_to mypage_concerts_path do
+        img src="#{current_user.image_url}"
+        p.N-MenuItems-Description
+          span
+            | Musician
+          br
+          span
+            = current_user.nickname
 
-    - else
-      .N-Global-MenuItems-Mypage
-        = link_to 'Twitterでログイン', 'auth/twitter'
+  - else
+    .N-Global-MenuItems-Mypage
+      = link_to 'Twitterでログイン', 'auth/twitter'

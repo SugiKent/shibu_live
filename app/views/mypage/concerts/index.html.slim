@@ -1,7 +1,7 @@
-div
-  = link_to "ライブを登録！", new_mypage_concert_path
+.N-Main-Right
 
-  - @concerts.each do |concert|
-    p
-      = concert.title
-  = link_to 'ログアウト', logout_path
+  .S-List
+    ul.S-List__items
+      - @concerts.each do |concert|
+        li.S-List__item
+          = link_to concert.title, concert_path(concert)

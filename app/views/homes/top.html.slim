@@ -1,2 +1,12 @@
-p
-  | これはhomes#top
+.N-Login
+  .N-Login-Contents
+    h2.N-LoginTitle
+      | GO TO SHIBUYA.
+    p.N-LoginDescription
+      | あなたの活動を渋谷でもっと発信しよう。
+  .N-LoginForm
+    span
+      = link_to 'auth/twitter' do
+        = image_tag "sns.ticon.jpg"
+    p
+      | Twitterでログインする

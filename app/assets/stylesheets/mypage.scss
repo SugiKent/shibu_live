@@ -1,0 +1,16 @@
+.S-List {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  vertical-align: top;
+  &__items {
+    list-style-type: none;
+  }
+  &__item {
+    display: block;
+    line-height: 40px;
+    & a {
+      color: #333;      
+    }
+  }
+}
