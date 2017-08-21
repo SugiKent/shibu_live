@@ -1,24 +1,7 @@
-# README
+# シブライブ！
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## シブライブとは？
+渋谷をより一層楽しんでもらうためのwebサービスです。
+路上ライブや、路上パフォーマンスの位置情報を知ることができ、渋谷民独特の「自己表現」をより感じることができます。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+TRUNK開催のハッカソン（https://trunk.fm/trainings/977）で開発しました。
